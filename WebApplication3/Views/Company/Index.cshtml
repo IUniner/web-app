@@ -1,0 +1,16 @@
+﻿@using WebApplication3.Models;
+@model List<Company>
+
+<table class="table table-striped">
+    @foreach (var company in Model)
+    {
+    <tr>
+        <td>@company.Name </td>
+        <td><a href="/Company/Edit/@company.Id">Edit</a></td>
+        <td><a href="/Company/Delete/@company.Id">Delete</a></td>
+        <td><a href="/Employee?companyId=@company.Id">View Employees</a></td>
+        <td><a href="/Employee/Add?companyId=@company.Id">Add new Employee</a></td>
+    </tr>
+    }
+</table>
+<div><a href="/Company/Add/">Add new company</a></div>

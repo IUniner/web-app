@@ -1,0 +1,26 @@
+﻿@using WebApplication3.Models;
+@model Employee
+@{string action = ViewBag.Action; }
+@using (Html.BeginForm(action, "Employee", FormMethod.Post))
+{
+
+    <table>
+        @Html.HiddenFor(p => p.Id)
+        @Html.HiddenFor(p => p.CompanyId)
+        <tr>
+            <td>@Html.LabelFor(p => p.LastName)</td>
+            <td>@Html.TextBoxFor(p => p.LastName)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(p => p.FirstName)</td>
+            <td>@Html.TextBoxFor(p => p.FirstName)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(p => p.Age)</td>
+            <td>@Html.EditorFor(p => p.Age)</td>
+        </tr>
+
+    </table>
+    <button>Submit</button>
+
+}

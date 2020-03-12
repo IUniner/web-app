@@ -1,0 +1,18 @@
+﻿@using WebApplication3.Models;
+@model Company
+@{string action = ViewBag.Action; }
+@using (Html.BeginForm(action, "Company", FormMethod.Post))
+{
+
+    <table>
+        @Html.HiddenFor(p => p.Id)
+        <tr>
+            <td>@Html.LabelFor(p => p.Name)</td>
+            <td>@Html.TextBoxFor(p => p.Name)</td>
+        </tr>
+
+
+    </table>
+    <button>Submit</button>
+
+}
