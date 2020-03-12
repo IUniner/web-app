@@ -1,0 +1,16 @@
+﻿@using WebApplication1.Models;
+@model List<Employee>
+
+<table class="table-striped">
+    @foreach (var employee in Model)
+    {
+        <tr>
+            <td>@employee.FirstName </td>
+            <td>@employee.LastName </td>
+            <td>@employee.Age</td>
+            <td><a href="/Employee/Edit/@employee.Id">Edit</a></td>
+            <td><a href="/Employee/Delete/@employee.Id">Delete</a></td>
+        </tr>
+    }
+</table>
+<div><a href="/Employee/Add">Add new user</a></div>
